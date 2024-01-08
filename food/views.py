@@ -18,4 +18,9 @@ def item(request):
 
 
 def detail(request, item_id):
-    return HttpResponse(f"This is the page: {item_id}")
+    item = Item.objects.get(pk=item_id)
+    context = {
+        'item': item,
+    }
+
+    return render(request, 'food/detail.html', context)
