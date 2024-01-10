@@ -5,6 +5,8 @@ app_name = 'food'
 urlpatterns = [
     path('', views.index, name='index'),     # /food/
     path('<int:item_id>/', views.detail, name='detalle'),    # /food/1, path's name is "detalle"
-    path('item/', views.item, name='item')
+    path('item/', views.item, name='item'),
+    # add items
+    path('add/', views.create_item, name='create_item')
 ]
 
